@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* 基础样式和背景设计 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(106, 192, 229, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(106, 192, 229, 0.03) 0%, transparent 20%),
+        linear-gradient(120deg, rgba(176, 218, 237, 0.05) 0%, transparent 50%),
+        linear-gradient(60deg, rgba(176, 218, 237, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* 装饰性图案 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6ac0e5, #4da9d4, #6ac0e5);
+    z-index: 1000;
+}
+
+/* 标题美化 */
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #4a4a4a;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #6ac0e5;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+
+/* 居中容器 */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    flex-direction: column;
+    gap: 1.2rem; /* Spacing between elements in the column */
+}
+
+/* 画布美化（彻底修正偏移版） */
+#canvas {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin: 1.5rem 0 1rem 0;
+    cursor: crosshair;
+    transition: box-shadow .2s ease-in-out, border-color .2s ease-in-out;
+
+    /* 核心1：边框包含在尺寸内，避免额外占位 */
+    box-sizing: border-box;
+    /* 核心2：禁止默认内边距（如果有） */
+    padding: 0;
+    /* 核心3：确保画布无定位偏移（避免relative/absolute导致的坐标混乱） */
+    position: static;
+}
+
+#canvas:active, #canvas:focus {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-color: #a7d9ed;
+}
+
+
+/* 按钮美化 */
+input[type="button"], .myButton {
+    background-color: #6ac0e5; /* A fresh, soft blue */
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500; /* Slightly bolder text for buttons */
+    border-radius: 6px; /* Gentle rounding */
+    padding: 0.7rem 2rem;
+    margin: 0 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle button shadow */
+    transition: background-color .25s ease, box-shadow .25s ease, transform .1s ease;
+    outline: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+input[type="button"]:hover, .myButton:hover {
+    background-color: #4da9d4; /* A slightly darker blue on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* More pronounced shadow on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+input[type="button"]:active, .myButton:active {
+    transform: translateY(0); /* Return to original position on click */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+}
+
+/* 结果字体美化 */
+#result {
+    color: #2c3e50; /* A strong, clear dark blue-grey */
+    font-size: 2.3rem;
+    margin-top: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    min-height: 3rem; /* Ensure consistent height */
+    text-align: center;
+}
+
+/* 博客链接 */
+a {
+    color: #6ac0e5; /* Matches button primary color */
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color .2s ease, text-decoration .2s ease;
+    margin-top: 2.5rem; /* Add some space below result */
+}
+
+a:hover {
+    color: #4da9d4; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* 响应式优化 */
+@media (max-width: 640px) {
+    #canvas {
+        width: 90vw !important; /* Slightly smaller on mobile to allow padding */
+        height: 90vw !important;
+        max-width: 95vw;
+        max-height: 95vw;
+        margin: 1rem 0;
+    }
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    #result {
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+        min-height: 2rem;
+    }
+    .centered {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+    }
+    input[type="button"], .myButton {
+        margin: 0.5rem 0;
+        width: 70vw; /* Make buttons stack better and take more width */
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+    a {
+        margin-top: 2rem;
+    }
+}
