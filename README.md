@@ -24,5 +24,6 @@ pip install -r requirements.txt
 ![Web端效果展示](https://github.com/zlyd-CV/Photos_Are_Used_To_Others_Repository/blob/610062f16c08e609ab9b47da1dc872768e3bf002/Intermediate_Use_Flask_To_Predict_Mnist/%E8%BF%90%E8%A1%8C%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 ## 五、部分资源下载地址
-+ pytorch官网下载带cuda的pytorch：https://pytorch.org/
++ pytorch官网下载带cuda的pytorch：https://pytorch.org
++ Anaconda官网下载地址：https://anaconda.org/anaconda/conda
 # 最后，再次感谢https://github.com/ghplvh/PytorchMinst 仓库提供的原始代码
