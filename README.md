@@ -10,6 +10,9 @@
 + 本项目源代码来自https://github.com/ghplvh/PytorchMinst 仓库，但原始代码存在一些逻辑问题和较为过时的torch语法，在本仓库中已修正。
 + 本项目适合希望实现简单的模型部署的初学者，对于工业应用以学习ONNX和TensorRT为主。
 + 优化内容：①训练模型代码；②Web前端显示效果；③增加了版本检查，cuda检查并灵活应用；④修复了一些随着包版本不兼容导致的问题。
++ 项目流程图
+
+![项目流程图](https://github.com/zlyd-CV/Photos_Are_Used_To_Others_Repository/blob/cbf5e9bf3463cad30ebbd27819774a8bbe5f86b5/Intermediate_Use_Flask_To_Predict_Mnist/Flask%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.drawio.svg)
 
 ## 三、内容介绍(只介绍关键部分)
 + 本项目包含：
